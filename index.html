@@ -11,9 +11,34 @@
             padding: 0;
             background-color: #f4f4f4;
         }
+        #age-verification {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 1000;
+        }
+        #age-verification button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #age-verification button:hover {
+            background-color: #575757;
+        }
         header {
             background-color: #222;
-            color: #fff;
+            color: red;
             padding: 10px 0;
             text-align: center;
         }
@@ -85,6 +110,14 @@
     </style>
 </head>
 <body>
+
+    <div id="age-verification">
+        <h2>Are you 21 or older?</h2>
+        <p>You must be of legal smoking age to enter this site.</p>
+        <button onclick="enterSite()">Yes, I am 21 or older</button>
+        <button onclick="window.location.href='https://www.google.com'">No, I am under 21</button>
+    </div>
+
     <header>
         <h1>Welcome to Vape 29</h1>
         <p>Your Trusted Vape Store</p>
@@ -138,6 +171,11 @@
     <footer>
         <p>&copy; 2024 Vape 29. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function enterSite() {
+            document.getElementById('age-verification').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
-

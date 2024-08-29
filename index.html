@@ -16,18 +16,18 @@
             font-size: 16px; /* Smaller font size */
             position: fixed; /* Fixed position at the top */
             top: 0;
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Center horizontally */
+            left: -100%; /* Start off-screen to the left */
+            transform: translateY(0); /* Center vertically */
             max-width: 90%; /* Limit width */
             z-index: 1000; /* Ensure it appears above other content */
-            animation: blink 1s step-start infinite; /* Blinking effect */
+            animation: slideIn 3s ease-in-out infinite; /* Sliding effect */
         }
 
-        /* Blinking effect */
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 1; }
+        /* Left-to-right animation */
+        @keyframes slideIn {
+            0% { left: -100%; } /* Start off-screen to the left */
+            50% { left: 50%; } /* Move to the center of the viewport */
+            100% { left: 100%; } /* Move off-screen to the right */
         }
 
         body {

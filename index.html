@@ -107,20 +107,30 @@
             color: #fff;
             margin-top: 20px;
         }
+        .contact-details {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .contact-details p {
+            margin: 5px 0;
+            color: #333;
+        }
     </style>
 </head>
 <body>
 
     <div id="age-verification">
-        <h2 style="color: red;">Are you 21 or older?</h2>
+        <h2>Are you 21 or older?</h2>
         <p>You must be of legal smoking age to enter this site.</p>
         <button onclick="enterSite()">Yes, I am 21 or older</button>
         <button onclick="window.location.href='https://www.google.com'">No, I am under 21</button>
     </div>
 
     <header>
-    <h1 style="color: red;">Welcome to Vape 29</h1>
-    <p>Your Trusted Vape Store</p>
+        <h1>Welcome to Vape 29</h1>
+        <p>Your Trusted Vape Store</p>
     </header>
 
     <nav>
@@ -134,19 +144,19 @@
         <h2>Our Bestsellers</h2>
         <div class="products" id="products">
             <div class="product-item">
-                <img src="vape1.jpg" alt="Vape Product 1">
-                <h3>Vape Product 1</h3>
-                <p>$29.99</p>
+                <img src="images/geekBar.jpg" alt="Geek Bar">
+                <h3>Geek Bar</h3>
+                <p>$22.99</p>
             </div>
             <div class="product-item">
-                <img src="vape2.jpg" alt="Vape Product 2">
-                <h3>Vape Product 2</h3>
-                <p>$39.99</p>
+                <img src="images/IronMike.jpg" alt="Iron Mike">
+                <h3>Iron Mike</h3>
+                <p>$20.99</p>
             </div>
             <div class="product-item">
-                <img src="vape3.jpg" alt="Vape Product 3">
-                <h3>Vape Product 3</h3>
-                <p>$49.99</p>
+                <img src="images/Orion" alt="Orion">
+                <h3>Orion</h3>
+                <p>$20.99</p>
             </div>
         </div>
     </div>
@@ -158,6 +168,14 @@
 
     <div class="container" id="contact">
         <h2>Contact Us</h2>
+        
+        <div class="contact-details">
+            <h3>Vape 29 - Vape & Smoke Shop</h3>
+            <p><strong>Address:</strong> 9073 W State Hwy 29 Unit 112A, Liberty Hill, TX 78642</p>
+            <p><strong>Hours:</strong> Monday to Saturday: 10AM - 9PM</p>
+            <p><strong>Phone Number:</strong> (512) 368-2662</p>
+        </div>
+
         <div class="contact-form">
             <form action="#">
                 <input type="text" name="name" placeholder="Your Name" required>

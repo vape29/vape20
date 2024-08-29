@@ -158,44 +158,6 @@
     <script src="clock.js"></script>
 </body>
 </html>
-
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Hit Counter</title>
-    <style>
-        #hit-counter {
-            font-size: 24px;
-            color: #333;
-            margin: 20px;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-
-    <div id="hit-counter">Loading hit count...</div>
-
-    <script>
-        function updateHitCounter() {
-            fetch('hit_counter.php')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('hit-counter').innerText = `This page has been visited ${data} times.`;
-                })
-                .catch(error => {
-                    console.error('Error fetching hit count:', error);
-                });
-        }
-
-        // Update hit counter on page load
-        updateHitCounter();
-    </script>
-</body>
-</html>
-
     
     <nav>
         <a href="#home">Home</a>

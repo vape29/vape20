@@ -3,124 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
-    <style>
-        /* Style for the warning message */
-        #warning-message {
-            background-color: #f8d7da; /* Light red background */
-            color: #dc3545; /* Red text color */
-            border: 2px solid #dc3545; /* Red border */
-            padding: 8px 16px; /* Smaller padding */
-            text-align: center;
-            font-weight: bold;
-            font-size: 16px; /* Smaller font size */
-            position: fixed; /* Fixed position at the top */
-            top: 0;
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Center horizontally */
-            max-width: 90%; /* Limit width */
-            z-index: 1000; /* Ensure it appears above other content */
-            animation: blink 1s step-start infinite; /* Blinking effect */
-        }
-
-        /* Blinking effect */
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        body {
-            margin-top: 50px; /* Ensure content isn't hidden behind the warning */
-        }
-    </style>
-</head>
-<body>
-
-    <div id="warning-message">
-        WARNING: This product contains nicotine. Nicotine is an addictive chemical.
-    </div>
-
-    <!-- Your page content goes here -->
-    <div id="content">
-        <!-- Content of your page -->
-    </div>
-
-</body>
-</html>
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vape 29 - Your Trusted Vape Store</title>
+    <title>Vape 29 - Premium Vape & Smoke Shop</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f5f5f5;
+            color: #333;
         }
+
+        /* Age Verification Overlay */
         #age-verification {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.85);
             color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
             z-index: 1000;
+            font-size: 18px;
         }
         #age-verification button {
-            background-color: #333;
+            background-color: #dc3545;
             color: #fff;
             padding: 10px 20px;
             border: none;
             margin: 10px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
         #age-verification button:hover {
-            background-color: #575757;
+            background-color: #b02a37;
         }
+
+        /* Header */
         header {
-            background-color: #222;
-            color: red;
-            padding: 10px 0;
+            background-color: #111;
+            color: #dc3545;
+            padding: 15px 0;
             text-align: center;
         }
+        header h1 {
+            font-size: 28px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        header p {
+            margin: 5px 0 0;
+            font-size: 16px;
+        }
+
+        /* Navigation */
         nav {
             display: flex;
             justify-content: center;
             background-color: #333;
+            padding: 10px 0;
         }
         nav a {
             color: #fff;
-            padding: 14px 20px;
+            padding: 12px 20px;
             text-decoration: none;
             text-transform: uppercase;
+            transition: background-color 0.3s ease;
         }
         nav a:hover {
-            background-color: #575757;
+            background-color: #444;
         }
+
+        /* Main Content */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-        h1, h2, h3 {
-            color: #333;
+
+        h2 {
+            color: #dc3545;
+            text-transform: uppercase;
+            margin-bottom: 20px;
         }
+
+        /* Products Section */
         .products {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
         .product-item {
@@ -128,28 +101,33 @@
             border: 1px solid #ddd;
             padding: 15px;
             text-align: center;
+            transition: box-shadow 0.3s ease;
+        }
+        .product-item:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .product-item img {
             max-width: 100%;
             height: auto;
+            margin-bottom: 10px;
         }
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background-color: #222;
-            color: #fff;
-            margin-top: 20px;
-        }
+
+        /* Contact Section */
         .contact-details {
             background-color: #fff;
             padding: 20px;
             border: 1px solid #ddd;
             margin-bottom: 20px;
         }
+        .contact-details h3 {
+            margin-bottom: 10px;
+        }
         .contact-details p {
             margin: 5px 0;
-            color: #333;
+            color: #555;
         }
+
+        /* Map */
         .map-container {
             margin-top: 20px;
         }
@@ -158,6 +136,8 @@
             height: 400px;
             border: 0;
         }
+
+        /* Testimonials */
         .testimonial {
             background-color: #fff;
             padding: 15px;
@@ -166,17 +146,51 @@
         }
         .testimonial p {
             margin: 0;
-            color: #333;
+            color: #555;
         }
         .testimonial p:nth-child(2) {
             text-align: right;
             font-weight: bold;
             margin-top: 5px;
         }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: #111;
+            color: #fff;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        /* Warning Message */
+        #warning-message {
+            background-color: #f8d7da;
+            color: #dc3545;
+            border: 2px solid #dc3545;
+            padding: 8px 16px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            animation: slideIn 8s linear infinite;
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateX(-100%); }
+            50% { transform: translateX(0); }
+            100% { transform: translateX(100%); }
+        }
     </style>
 </head>
 <body>
 
+    <!-- Age Verification Overlay -->
     <div id="age-verification">
         <h2 style="color: red;">Are you 21 or older?</h2>
         <p>You must be of legal smoking age to enter this site.</p>
@@ -184,35 +198,18 @@
         <button onclick="window.location.href='https://www.google.com'">No, I am under 21</button>
     </div>
 
+    <!-- Warning Message -->
+    <div id="warning-message">
+        WARNING: This product contains nicotine. Nicotine is an addictive chemical.
+    </div>
+
+    <!-- Header -->
     <header>
-        <h1 style="color: red;">Welcome to Vape 29</h1>
-        <p>Your Trusted Vape Store</p>
+        <h1>Welcome to Vape 29</h1>
+        <p>Your Premium Vape & Smoke Shop</p>
     </header>
 
-
-   <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real-Time Clock</title>
-    <style>
-        #clock {
-            font-size: 24px;
-            color: #333;
-            margin: 20px;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-
-    <div id="clock"></div>
-
-    <script src="clock.js"></script>
-</body>
-</html>
-    
+    <!-- Navigation -->
     <nav>
         <a href="#home">Home</a>
         <a href="#products">Products</a>
@@ -220,6 +217,7 @@
         <a href="#contact">Contact</a>
     </nav>
 
+    <!-- Main Content -->
     <div class="container" id="home">
         <h2>Our Bestsellers</h2>
         <div class="products" id="products">
@@ -241,70 +239,67 @@
         </div>
     </div>
 
+    <!-- About Section -->
     <div class="container" id="about">
         <h2>About Vape 29</h2>
-        <p>At Vape 29, we offer a diverse selection of high-quality vaping products, including **Vapes**, **Delta 8**, **Sativa**, **Indica**, **Gummies**, **Kratom**, and **E-Juices**. Our commitment to quality and customer satisfaction makes us your go-to destination for all things vape.</p>
+        <p>At Vape 29, we offer a diverse selection of high-quality vaping products, including <strong>Vapes</strong>, <strong>Delta 8</strong>, <strong>Sativa</strong>, <strong>Indica</strong>, <strong>Gummies</strong>, <strong>Kratom</strong>, and <strong>E-Juices</strong>. Our commitment to quality and customer satisfaction makes us your go-to destination for all things vape.</p>
 
         <h3>Vapes</h3>
-        <p>Explore our premium range of vapes designed for both beginners and experienced users. Whether you're looking for disposable vapes, pod systems, or advanced vape mods, Vape 29 has the perfect product to meet your needs.</p>
+        <p>Explore our premium range of vapes designed for both beginners and experienced users. Whether you're looking for disposable vapes, pod systems, or advanced vape mods, Vape 29 has the perfect product to meet your needs. Keywords: <strong>vape shop, disposable vapes, pod systems, vape mods</strong>.</p>
 
         <h3>Delta 8</h3>
-        <p>Delta 8 is the latest trend in the vaping world, offering a milder psychoactive effect compared to Delta 9 THC. Our selection of Delta 8 products includes cartridges, gummies, and tinctures, all sourced from reputable brands.</p>
+        <p>Delta 8 is the latest trend in the vaping world, offering a milder psychoactive effect compared to Delta 9 THC. Our selection of Delta 8 products includes cartridges, gummies, and tinctures, all sourced from reputable brands. Keywords: <strong>Delta 8 products, Delta 8 vape cartridges, Delta 8 gummies</strong>.</p>
 
         <h3>Sativa</h3>
-        <p>Sativa strains are known for their uplifting and energizing effects. Ideal for daytime use, our Sativa-based products include vape cartridges, flower, and edibles that provide a clear-headed and creative boost.</p>
+        <p>Sativa strains are known for their uplifting and energizing effects. Ideal for daytime use, our Sativa-based products include vape cartridges, flower, and edibles that provide a clear-headed and creative boost. Keywords: <strong>Sativa vape, Sativa flower, Sativa edibles</strong>.</p>
 
         <h3>Indica</h3>
-        <p>Indica strains are perfect for relaxation and stress relief. Our Indica-based products, including vape cartridges, edibles, and tinctures, offer a calming experience, making them ideal for evening use or unwinding after a long day.</p>
+        <p>Indica strains are perfect for relaxation and stress relief. Our Indica-based products, including vape cartridges, edibles, and tinctures, offer a calming experience, making them ideal for evening use or unwinding after a long day. Keywords: <strong>Indica vape, Indica edibles, Indica tinctures</strong>.</p>
 
         <h3>Gummies</h3>
-        <p>Our selection of gummies includes both CBD and THC-infused options. These delicious, discreet edibles are a popular choice for those seeking the benefits of cannabinoids without vaping or smoking.</p>
+        <p>Vape 29 offers a wide variety of gummies, including CBD, Delta 8, and THC-infused options. These delicious and discreet edibles provide a convenient way to enjoy the benefits of cannabis without smoking. Keywords: <strong>CBD gummies, Delta 8 gummies, THC gummies</strong>.</p>
 
         <h3>Kratom</h3>
-        <p>Kratom is a natural herb that has gained popularity for its pain-relieving and mood-enhancing properties. We offer a range of Kratom products, including powders and capsules, to help you achieve your wellness goals.</p>
+        <p>Kratom is a natural herb that offers a range of benefits, from increased energy to pain relief. Our selection of Kratom products includes capsules, powders, and extracts, all sourced from the finest suppliers. Keywords: <strong>Kratom capsules, Kratom powder, Kratom extracts</strong>.</p>
 
         <h3>Juices</h3>
-        <p>Our e-juices come in a variety of flavors and nicotine levels to suit every preference. Whether you're looking for a fruity blend, a creamy dessert flavor, or a classic tobacco taste, our e-juices deliver a satisfying vaping experience.</p>
+        <p>Our e-juices come in a variety of flavors and nicotine strengths, ensuring a personalized vaping experience. From fruity blends to classic tobacco flavors, we have something for every palate. Keywords: <strong>e-juices, vape juices, flavored e-liquids</strong>.</p>
     </div>
 
+    <!-- Contact Section -->
     <div class="container" id="contact">
         <h2>Contact Us</h2>
-        
         <div class="contact-details">
-            <h3>Vape 29 - Vape & Smoke Shop</h3>
-            <p><strong>Address:</strong> 9073 W State Hwy 29 Unit 112A, Liberty Hill, TX 78642</p>
-            <p><strong>Hours:</strong> Monday to Saturday: 10AM - 9PM</p>
-            <p><strong>Phone Number:</strong> (512) 368-2662</p>
+            <h3>Vape 29</h3>
+            <p>123 Vape Street, Smoke City, VQ 45678</p>
+            <p>Email: <a href="mailto:info@vape29.com">info@vape29.com</a></p>
+            <p>Phone: (123) 456-7890</p>
         </div>
-
         <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.905221818046!2d-97.9248468248888!3d30.664553481618987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644c17435f857ff%3A0x77b1ebd314d19793!2s9073%20W%20State%20Hwy%2029%20Unit%20112A%2C%20Liberty%20Hill%2C%20TX%2078642%2C%20USA!5e0!3m2!1sen!2sin!4v1693476543211!5m2!1sen!2sin" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3154.8240999397086!2d-122.406417!3d37.785834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085818d7f09f6b1%3A0x8bb0b4edb0c7779e!2sVape%20Store!5e0!3m2!1sen!2sus!4v1624376874601!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
         </div>
-        
+    </div>
 
-    <div class="container" id="testimonials">
-        <h2>Customer Testimonials</h2>
+    <!-- Testimonials Section -->
+    <div class="container">
+        <h2>What Our Customers Say</h2>
         <div class="testimonial">
-            <p>"Great selection and customer service! Will definitely come back!"</p>
+            <p>"The best vape shop in town! Great selection and amazing customer service."</p>
             <p>- Jane Doe</p>
         </div>
         <div class="testimonial">
-            <p>"Best vape shop in town, highly recommended."</p>
+            <p>"Vape 29 always has the latest products, and their prices are unbeatable."</p>
             <p>- John Smith</p>
         </div>
         <div class="testimonial">
-            <p>"Loved the variety of products and the helpful staff."</p>
-            <p>- Emily Johnson</p>
+            <p>"I love their Delta 8 gummies. They work like a charm and taste great!"</p>
+            <p>- Sarah Lee</p>
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Vape 29. All Rights Reserved.</p>
+        <p>&copy; 2024 Vape 29. All rights reserved.</p>
     </footer>
 
     <script>
